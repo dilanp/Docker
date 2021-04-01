@@ -54,3 +54,5 @@ docker container run -it mcr.microsoft.com/powershell:nanoserver pwsh.exe
 #To release the terminal press => Ctrl+P+Q
 docker container ls
 
+#Execute a command inside a container.
+docker exec CONTAINER_NAME COMMAND
