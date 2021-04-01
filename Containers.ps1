@@ -12,6 +12,9 @@ docker container run -it --name test -p 8080:5000 -v $(pwd):/app -w "/app" mcr.m
 #WINDOWS:
 docker container run -it --name test -p 8080:5000 -v ${PWD}:/app -w "/app" mcr.microsoft.com/dotnet/sdk pwsh
 
+#Pass an environment variable when running a container.
+docker run -d --name my-postgres -e POSTGRES_PASSWORD=password postgres
+
 #Inspect the configuration of a running container.
 docker container inspect webtest
 docker inspect webtest
