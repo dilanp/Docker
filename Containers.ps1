@@ -36,6 +36,8 @@ docker container stop web
 docker container rm web #OR docker rm web
 docker container ls -a
 
+#Remove multiple containers in one go.
+docker rm -f $(docker ps -a -q)
 
 #Forcefully remove a Docker container.
 docker container rm web -f
