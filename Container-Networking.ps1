@@ -1,5 +1,9 @@
 #Create a "bridge" network giving name - isolated_network.
 docker network create --driver bridge isolated_network
+docker network create -d bridge isolated_network
+
+#Create a "overlay" network giving name - overlay_network (preferred on Docker swarms!).
+docker network create -d overlay overlay_network
 
 #View the list of networks available.
 docker network ls

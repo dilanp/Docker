@@ -37,7 +37,8 @@ docker container rm web #OR docker rm web
 docker container ls -a
 
 #Remove multiple containers in one go.
-docker rm -f $(docker ps -a -q)
+docker container rm $(docker container ls -aq) -f
+docker rm -f $(docker ps -aq)
 
 #Forcefully remove a Docker container.
 docker container rm web -f
@@ -52,9 +53,17 @@ docker rm -v web
 #Run a Docker container attached to the terminal
 docker container run -it --name test alpine sh
 #OR on WINDOWS
-docker container run -it mcr.microsoft.com/powershell:nanoserver pwsh.exe
+docker container run -it mcr.microsoft.com/powershell:nanoserver pwsh
 #To release the terminal press => Ctrl+P+Q
 docker container ls
 
 #Execute a command inside a container.
 docker exec CONTAINER_NAME COMMAND
+
+#Getting into a terminal of running container.
+docker container exec -it CONTAINER_NAME/ID sh
+docker container exec -it CONTAINER_NAME/ID pwsh
+
+#Check the port mapping of a running container
+docker port CONTAINER_NAME
+
