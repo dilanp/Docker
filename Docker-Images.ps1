@@ -35,6 +35,7 @@ docker pull alpine:latest
 docker image pull alpine -a
 
 #Check the history of an image.
+docker image history redis
 docker history redis
 
 #Inspect the layers of an image.

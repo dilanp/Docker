@@ -4,14 +4,6 @@ docker container ls
 #OR
 docker ps
 
-#Run a container with a SPECIFIC attached volume, 
-#Make it the working directory and move into it,
-#Start a terminal in there attaching to the current terminal.
-#LINUX/OSX: 
-docker container run -it --name test -p 8080:5000 -v $(pwd):/app -w "/app" mcr.microsoft.com/dotnet/sdk /bin/bash
-#WINDOWS:
-docker container run -it --name test -p 8080:5000 -v ${PWD}:/app -w "/app" mcr.microsoft.com/dotnet/sdk pwsh
-
 #Pass an environment variable when running a container.
 docker run -d --name my-postgres -e POSTGRES_PASSWORD=password postgres
 

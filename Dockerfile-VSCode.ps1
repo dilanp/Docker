@@ -7,8 +7,13 @@
 #Select the project type, platform, port options and etc.
 
 #Note that this doesn't set the port! You will have to add it in...
+
 FROM base AS final
+
 ENV ASPNETCORE_URLS=http://*5000 #Like this!
+
 WORKDIR /app
+
 COPY --from=publish /app/publish .
+
 ENTRYPOINT ["dotnet", "DemoProject.dll"]
