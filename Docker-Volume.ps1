@@ -1,4 +1,3 @@
-
 #Run a container with a SPECIFIC attached volume, 
 #Make it the working directory and move into it,
 #Start a terminal in there attaching to the current terminal.
@@ -9,6 +8,8 @@ docker container run -it --name test -p 8080:5000 -v ${PWD}:/app -w "/app" mcr.m
 
 #Run a container attaching a volume which is created on the fly.
 docker container run -dit --name voltest --mount source=ubervol,target=/vol alpine
+#OR like,
+docker container run -d -p 5432:5432 -v postgres-data:/var/lib/postgresql/data --name postgres1 postgres
 
 #LINUX: inspect the Docker columes on local disk.
 ls -l /var/lib/docker/volumes/

@@ -22,6 +22,10 @@ docker push dilanperera/gsd:first-ctr
 docker image rm dilanperera/gsd:first-ctr #OR docker rmi dilanperera/gsd:first-ctr
 docker image ls
 
+#Tag a Docker image with a different tag (creates a copy with the new tag)
+#Usually needed before pushing to ACR or other registries.
+docker tag samplewebapp:v2 psacrtest001.azurecr.io/samplewebapp:v2 
+
 #=======================================================
 
 #Search docker images on docker hub.

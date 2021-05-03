@@ -4,6 +4,9 @@ docker container ls
 #OR
 docker ps
 
+#Specify --rm with -it if you want to auto remove the container after the interactive session ends.
+docker run -it --rm --link redis1:redis --name client1 redis sh
+
 #Pass an environment variable when running a container.
 docker run -d --name my-postgres -e POSTGRES_PASSWORD=password postgres
 
